@@ -47,19 +47,18 @@ const addRecordsStorage = player => {
 
 //Puntuaciones Altas
 const showRecords = () =>{
-    let trs ='';
+    let tr ='';
     records.sort((a,b)=> a.clicks-b.clicks)
     for(let i = 0; i < 5; i++){
         const {nombre,clicks} = records[i];
-       const tr =`
+        tr +=`
             <tr>
                 <td>${i+1}</td>
                 <td>${nombre}</td>
                 <td>${clicks}</td>
-            </tr>`
-        trs+= tr
+            </tr>`;
     };
-    $('#Bester').html(trs)
+    $('#Bester').html(tr)
 }
 //----------Variables----------//
 let clicks = 0;
