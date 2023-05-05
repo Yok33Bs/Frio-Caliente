@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+:root{
+    --border:rgb(66, 45, 6);
+    --colorA:rgb(214, 212, 161);
+    --backgroud:rgb(94, 80, 18);
+    --hover: rgba(79, 65, 0, 0.4);
+}
+
+*{
+    font-family: "Fredoka One", cursive;
+    color: var(--colorA);
+}
+
+body{
+    margin: 0px;
+    background-image: url(img/7951512.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-items: center;
+}
+
+.container{
+    width: 90%;
+    border: 10px solid var(--border);
+    background-color: #212121;
+    border-radius: 60px;
+    margin: 2%;
+    display:grid;
+    grid-auto-flow: row;
+    grid-template-rows: 17% 5% 60% 15%;
+    justify-items: center;
+}
+
+.container #titulo{
+    width: 30%;
+    text-align: center;
+    border-bottom: 2px solid var(--border);
+}
+
+.container #points{
+    font-size: 20px;
+    display: grid;
+    width: 70%;
+    grid-auto-flow: column;
+    grid-template-columns: 35% 35% 25%;
+    align-items: center;
+}
+
+.container #points p{
+    margin: 0%;
+}
+
+.container #points a{   
+    padding: 3%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+  
+.btn:hover {
+    box-shadow: 1px 1px 25px 10px var(--hover);
+}
+  
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      var(--hover),
+      transparent
+    );
+    transition: all 650ms;
+}
+  
+.btn:hover:before {
+    left: 100%;
+}
+
+#mapa{
+    border: 5px solid var(--border);
+    border-radius: 15px;
+    margin: 2%;
+    width: 80%;
+    height: 90%;
+}
+
+#records{
+    display: flex;
+    width: 60%;
+}
+
+#records h2{
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+#tablaRecords{
+    width: 60%;
+    border: 3px solid var(--border);
+    border-collapse: collapse;
+}
+
+thead{
+    background: var(--backgroud);
+}

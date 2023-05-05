@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡¡Vamos a Jugar!!</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="titulo">Encuentre el tesoro escondido!</h1>
+        
+        <div id="points">
+            <p class="count">Guia: <span id="distancia"></span> </p>
+            <p class="count">Clicks:<span id="clicks"></span></p>
+            <a href="#" id="refresh" class="btn" onclick="refresh()">Reiniciar Juego</a>
+        </div>
+
+        <img id="mapa" src="./CSS/img/1000_F_579175492_fjTEEPwQPKs6LYNz4daJcDH4XrUWBoiQ.jpg"> 
+        
+        <div id="records">
+
+            <h2>Top 5 puntuaciones</h2>
+            <table id="tablaRecords">
+                <thead>
+                    <tr id="thead">
+                        <th>N°</th>
+                        <th>Nombre</th>
+                        <th>Clicks</th>
+                    </tr>
+                </thead>
+                <tbody id="Bester">
+                </tbody>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="./frioCaliente.js"></script>
+</body>
+</html>
