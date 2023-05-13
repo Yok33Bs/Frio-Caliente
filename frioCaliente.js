@@ -1,8 +1,13 @@
 //----------Funciones-------//
 //numero al azar
-const azar = (dimension) =>{
-    return Math.floor(Math.random() * dimension); 
-};
+const azar = dimension => Math.floor(Math.random() * dimension); 
+
+const createTamano = () => ({
+    x: azar($('#mapa')[0].width),
+    y: azar($('#mapa')[0].height)
+});
+
+let _tesoro = createTamano() ;
 
 //Calcula distancia con teorema de Pitagoras
 const distancia = (event, tesoro) => {
@@ -10,15 +15,13 @@ const distancia = (event, tesoro) => {
     const difX = event.offsetX - tesoro.x;
     const difY = event.offsetY - tesoro.y;
     
-    return Math.sqrt((difX * difX) + (difY * difY))
-    
+    return Math.sqrt((difX * difX) + (difY * difY));
 };
 
 //reiniciar
 const refresh = () =>{
     clicks = 0;
-    tesoro.x;
-    tesoro.y;
+    _tesoro = createTamano() ;
     $('#distancia').text('');
     $('#clicks').text('');
     
@@ -63,21 +66,12 @@ const showRecords = () =>{
 //----------Variables----------//
 let clicks = 0;
 
-const tesoro = {
-    x: azar($('#mapa')[0].width),
-    y: azar($('#mapa')[0].height)
-};
-
-
-//----------DOM----------//
-
-$('#tablaRecords').load(showRecords())
+//----------DOM----------/
 $('#mapa').click((event) => {
 
-    
     clicks++;
-    
-    const diferencia = distancia(event,tesoro)
+    console.log("tesoro --->", _tesoro);
+    const diferencia = distancia(event,_tesoro)
     const ayuda = guia(diferencia)
 
     $('#distancia').text(ayuda)
@@ -91,3 +85,5 @@ $('#mapa').click((event) => {
         
     };
 });
+
+$('#tablaRecords').change(showRecords());
