@@ -70,7 +70,6 @@ let clicks = 0;
 $('#mapa').click((event) => {
 
     clicks++;
-    console.log("tesoro --->", _tesoro);
     const diferencia = distancia(event,_tesoro)
     const ayuda = guia(diferencia)
 
